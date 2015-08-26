@@ -11,18 +11,18 @@ main:
 	pushq	%rbp
 	.cfi_def_cfa_offset 16
 	.cfi_offset 6, -16
-	movq	%rsp, %ebp
+	movq	%rsp, %rbp
 	.cfi_def_cfa_register 6
 	andl	$-16, %rsp
 	subq	$32, %rsp
 	movq	$2, 20(%rsp)
 	movq	$3, 24(%rsp)
-	movq	24(%rsp), %eax
-	movq	20(%rsp), %edx
-	addq	%rdx, %eax
-	movq	%rax, 28(%esp)
-	movq	28(%rsp), %eax
-	movq	%rax, 4(%esp)
+	movq	24(%rsp), %rax
+	movq	20(%rsp), %rdx
+	addq	%rdx, %rax
+	movq	%rax, 28(%rsp)
+	movq	28(%rsp), %rax
+	movq	%rax, 4(%rsp)
 	movq	$.LC0, (%rsp)
 	call	printf
 	movq	$0, %rax

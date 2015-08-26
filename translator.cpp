@@ -52,7 +52,11 @@ int main()
 		if(s.find("movl") != std::string::npos)
 			s.replace(s.find("movl"), 4,"movq");
 		if(s.find("%e") != std::string::npos)
+		{
 			s.replace(s.find("%e"), 2, "%r");
+			if(s.find("%e") != std::string::npos)
+				s.replace(s.find("%e"), 2, "%r");
+		}
 		if(s.find("addl") != std::string::npos)
 			s.replace(s.find("addl"), 4, "addq");
 		if(s.find("subl") != std::string::npos)
